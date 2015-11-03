@@ -1,0 +1,55 @@
+<h1>Index Page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Company Name</th>
+      <th>Company Contact Name</th>
+      <th>Company Size</th>
+      <th>Company Type</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.company_id %></td>
+        <td><%= company.company_name %></td>
+        <% if company.company_contacts.length > 0 %>
+          <td><%= company.company_contacts[0].name %></td>
+        <% else %>
+          <td>None</td>
+        <% end %>
+        <td><%= company.company_size %></td>
+        <td><%= company.company_type %></td>
+        <td><%= company.telephone %></td>
+        <td><%= company.email %></td>
+        <td><%= company.website_uri %></td>
+        <td><%= company.city %></td>
+        <td><%= company.state %></td>
+        <td><%= company.country %></td>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td>
+          <%= button_to "Delete Image", { action: "destroy", :controller => :companies, id: company.id },
+          method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+
+
