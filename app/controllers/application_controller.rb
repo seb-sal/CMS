@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+before_action :authenticate, only: [:index, :show, :edit, :update, :destroy]
+
   protect_from_forgery with: :exception
 
   private
@@ -18,4 +20,10 @@ class ApplicationController < ActionController::Base
     def authorize
       redirect_to login_path, alert: 'Not authorized - you must be logged in!' if current_user.nil?
     end
+
+        def authenticate
+      redirect_to '/login', alert: "You must login to continue!" if current_user.nil?
+    end
+
+
 end

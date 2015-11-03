@@ -1,11 +1,13 @@
 <h1>Index Page</h1>
 
+<h2><%= link_to 'Create new client', new_company_path %></h2>
+
 <table>
   <thead>
     <tr>
       <th>Id</th>
       <th>Company Name</th>
-      <th>Company Contact Name</th>
+      <th>Contact Name</th>
       <th>Company Size</th>
       <th>Company Type</th>
       <th>Telephone</th>
@@ -22,7 +24,7 @@
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= company.company_id %></td>
+        <td><%= company.count %></td>
         <td><%= company.company_name %></td>
         <% if company.company_contacts.length > 0 %>
           <td><%= company.company_contacts[0].name %></td>
@@ -37,10 +39,10 @@
         <td><%= company.city %></td>
         <td><%= company.state %></td>
         <td><%= company.country %></td>
-        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Details', company_path(company) %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td>
-          <%= button_to "Delete Image", { action: "destroy", :controller => :companies, id: company.id },
+          <%= button_to "Delete", { action: "destroy", :controller => :companies, id: company.id },
           method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       </tr>
