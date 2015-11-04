@@ -1,0 +1,50 @@
+<h1>Create a new Contact</h1>
+
+<%= form_for @company_contact do |f| %>
+  <% if @company_contact.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @company_contact.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :Id %>
+    <%= f.text_field :company_contact_id %>
+  </div>
+
+  </div>
+    <div class="field">
+    <%= f.label :Picture %>
+    <%= f.text_field :profile_pic_uri %>
+  </div>
+  <div class="field">
+    <%= f.label :Name %>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+    <%= f.label :Title %>
+    <%= f.text_field :job_title %>
+  </div>
+    <div class="field">
+    <%= f.label :Email %>
+    <%= f.text_field :email %>
+  </div>
+    <div class="field">
+    <%= f.label :Office_number %>
+    <%= f.text_field :office_number %>
+  </div>
+    <div class="field">
+    <%= f.label :Cellphone %>
+    <%= f.text_field :cellphone_number %>
+  </div>
+
+  <div class="actions"><%= f.submit %>
+  </div>
+
+<% end %>

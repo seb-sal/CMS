@@ -16,16 +16,20 @@
   <% else %>
     <%= link_to 'Login', login_path %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
+<!--     <%= link_to 'Sign Up', new_user_path %> -->
   <% end %>
 </p>
 
 <p>
-  <%= link_to 'Companies Main Page', controller: 'companies' %>
+  <%= link_to 'Companies', controller: 'companies' %>
   &nbsp;&nbsp;|&nbsp;&nbsp;
 
-  <%= link_to 'Users Main Page', controller: 'users' %>
+    <%= link_to 'Contacts', controller: 'company_contacts' %>
   &nbsp;&nbsp;|&nbsp;&nbsp;
+
+  <%= link_to 'Admin Users', controller: 'users' %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+
 </p>
 
 

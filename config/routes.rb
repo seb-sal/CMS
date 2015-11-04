@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   get '/user/edit', to: 'users#edit'
   get '/user/delete', to: 'users#destroy'
 
+  resources :company_contacts
+  get '/contacts', to: 'company_contacts#index'
+
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'
+  get '/logout', to: 'sessions#destroy'
 
   # get '/logout', to: 'sessions#detroy'
 
