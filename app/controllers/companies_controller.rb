@@ -4,7 +4,14 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.all
+
+    if params[:search]
+      @companies = Company.search(params[:search]).order("created_at DESC")
+    else
+      @companies = Company.order("created_at DESC")
+    end
   end
+
 
   def new
     @company = Company.new
