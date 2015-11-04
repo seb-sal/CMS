@@ -14,9 +14,9 @@ class CompanyContactsController < ApplicationController
 #     @company = Company.find(params[:id])
 #   end
 
-# def edit
-# @company = Company.find(params[:id])
-# end
+def edit
+@company_contact = CompanyContact.find(params[:id])
+end
 
   def create
     @company_contact = CompanyContact.new(company_contact_params)
