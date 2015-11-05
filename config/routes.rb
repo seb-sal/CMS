@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/user/delete', to: 'users#destroy'
 
 
-  resources :contacts, only: [:index]
+  resources :contacts, only: [:index, :show, :edit, :new]
   resources :companies, shallow: true do
     collection { post :import }
 

@@ -4,11 +4,11 @@ class Contact < ActiveRecord::Base
 
   # validates :company_id, presence: true
 
-  # def self.search(query)
-  #   where("name like?", "%#{query}%") &&
-  #   where("email like?", "%#{query}%") &&
-  #   where("office_number like?", "%#{query}%")
-  #   where("cellphone_number like?", "%#{query}%")
-  # end
+  def self.search(query)
+      where(
+      "name LIKE ? OR email LIKE ? OR office_number LIKE ? OR cellphone_number LIKE ?",
+      "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%"
+    )
+  end
 end
 

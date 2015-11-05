@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  # before_action :authenticate, only: [:index, :show, :edit, :update, :destroy]
+
 
 
   def index
@@ -24,7 +24,7 @@ class ContactsController < ApplicationController
   end
 
   def edit
-    @company_contact = Contact.find(params[:id])
+    @contact = Contact.find(params[:id])
   end
 
   def create
@@ -69,7 +69,4 @@ private
   end
 
 
-#     # def authenticate
-#     #   redirect_to '/login', alert: "You must login to continue!" if @current_company.nil?
-#     # end
 end

@@ -1,6 +1,6 @@
 <h2>Contacts page >> Create/Edit a contact</h2>
 
-<%= form_for [@company, @contact] do |f| %>
+<%= form_for @contact do |f| %>
   <% if @contact.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
