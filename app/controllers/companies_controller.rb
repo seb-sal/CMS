@@ -52,6 +52,11 @@ end
     redirect_to '/'
   end
 
+  def import
+    @company = Company.import(params[:file])
+    redirect_to companies_path, notice: "Companies Added Successfully"
+  end
+
 private
   def company_params
     params.require(:company).permit(:count,

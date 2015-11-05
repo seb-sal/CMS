@@ -11,7 +11,6 @@
            of using a Rails form helper -->
       <button class="btn" type="submit"><i class="icon-search"></i>Search</button>
       <%= submit_tag "Clear", :class => 'inputsubmit', :type => 'reset'%>
-
     </div>
   <% end %>
 </h3>
@@ -22,7 +21,7 @@
     <tr>
       <th>Id</th>
       <th>Company Name</th>
-      <th>Contact Name</th>
+<!--       <th>Contact Name</th> -->
       <th>Company Size</th>
       <th>Company Type</th>
       <th>Telephone</th>
@@ -41,11 +40,11 @@
       <tr>
         <td><%= company.count %></td>
         <td><%= company.company_name %></td>
-        <% if company.company_contacts.length > 0 %>
+<!--         <% if company.company_contacts.length > 0 %>
           <td><%= company.company_contacts[0].name %></td>
         <% else %>
           <td>None</td>
-        <% end %>
+        <% end %> -->
         <td><%= company.company_size %></td>
         <td><%= company.company_type %></td>
         <td><%= company.telephone %></td>
@@ -64,9 +63,13 @@
     <% end %>
   </tbody>
 </table>
-
-
 <br>
+
+<h4>Upload .csv file</h4>
+  <%= form_tag import_companies_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
 
 
 

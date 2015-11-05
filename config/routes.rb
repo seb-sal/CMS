@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :admin
 
-  resources :companies
+  resources :companies do
+    collection { post :import }
+  end
   # get 'home', to: 'admin#index'
   resources :users
   get '/users', to: 'users#index'
