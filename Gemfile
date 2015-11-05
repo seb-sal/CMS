@@ -30,6 +30,10 @@ gem 'puma'
 
 gem 'rails_12factor', group: :production
 
+gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'bootstrap_form'  # if you want bootstrap forms!
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
