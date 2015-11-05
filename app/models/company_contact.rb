@@ -1,12 +1,4 @@
 class CompanyContact < ActiveRecord::Base
-  # attr_accessible :company_contact_id,
-  #                 :date_created,
-  #                 :profile_pic_uri,
-  #                 :name,
-  #                 :email,
-  #                 :office_number,
-  #                 :cellphone_number,
-  #                 :company_id
 
   belongs_to :company
 

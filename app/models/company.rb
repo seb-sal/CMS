@@ -7,18 +7,22 @@ class Company < ActiveRecord::Base
     end
 end
 
+# def self.to_csv(options = {})
+#   CSV.generate(options) do |csv|
+#     csv << column_names
+#     all.each do |company|
+#       csv << company.attributes.values_at(*column_name)
+#     end
+#   end
+# end
 
   has_many :company_contacts, dependent: :destroy
 
 
-    # It returns the articles whose titles contain one or more words that form the query
   def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
-    where("company_name like?", "%#{query}%")
-    where("company_type like?", "%#{query}%")
-    where("city like?", "%#{query}%") &&
-    where("country like?", "%#{query}%")
-    where("telephone like?", "%#{query}%")
-
+    where(
+      "company_name LIKE ? OR company_type LIKE ? OR city LIKE ? OR country LIKE ? OR telephone LIKE ?",
+      "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%"
+    )
   end
 end

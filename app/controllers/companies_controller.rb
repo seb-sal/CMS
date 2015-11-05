@@ -6,9 +6,9 @@ class CompaniesController < ApplicationController
     @companies = Company.all
 
     if params[:search]
-      @companies = Company.search(params[:search]).order("created_at DESC")
+      @companies = Company.search(params[:search]).order(:created_at).reverse
     else
-      @companies = Company.order("created_at DESC")
+      @companies = Company.order(:created_at).reverse
     end
   end
 
@@ -56,6 +56,15 @@ end
     @company = Company.import(params[:file])
     redirect_to companies_path, notice: "Companies Added Successfully"
   end
+
+#   def export
+#     @company = Company.order(:name)
+#     respond_to do |format|
+#       format.html
+#       format.csv { send_data @companies.to_csv }
+#       format.xls #{ send_data @compnaies.to_csv(col_sep: "\t") }
+#   end
+# end
 
 private
   def company_params
