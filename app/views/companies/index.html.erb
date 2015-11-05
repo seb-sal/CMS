@@ -21,7 +21,6 @@
     <tr>
       <th>Id</th>
       <th>Company Name</th>
-<!--       <th>Contact Name</th> -->
       <th>Company Size</th>
       <th>Company Type</th>
       <th>Telephone</th>
@@ -31,7 +30,7 @@
       <th>State</th>
       <th>Country</th>
 
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -40,11 +39,6 @@
       <tr>
         <td><%= company.count %></td>
         <td><%= company.company_name %></td>
-<!--         <%# if company.contacts.length > 0 %>
-          <td><%#= company.contacts[0].name %></td>
-        <%# else %>
-          <td>None</td>
-        <%# end %> -->
         <td><%= company.company_size %></td>
         <td><%= company.company_type %></td>
         <td><%= company.telephone %></td>
@@ -53,6 +47,11 @@
         <td><%= company.city %></td>
         <td><%= company.state %></td>
         <td><%= company.country %></td>
+        <% if company.contacts.length > 0 %>
+          <td><%= link_to "Contacts", company_contacts_path(company) %></td>
+        <% else %>
+          <td>No contacts</td>
+        <% end %>
         <td><%= link_to 'Details', company_path(company) %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td>

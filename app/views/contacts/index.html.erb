@@ -1,6 +1,5 @@
 <h2>Contacts main page</h2>
 
-<h3><%= link_to 'New client', new_contact_path %></h3>
 <h4>
     <!-- When submit the form, the view rendered will be the index view of our articles resource -->
   <%= form_tag(contacts_path, :method => "get", class: "navbar-form", id: "search-form") do %>
@@ -31,19 +30,19 @@
   </thead>
 
   <tbody>
-    <% @company_contacts.each do |company_contact| %>
+    <% @contacts.each do |contact| %>
       <tr>
-        <td><%= company_contact.contact_id %></td>
-        <td><%= company_contact.profile_pic_uri %></td>
-        <td><%= company_contact.name %></td>
-        <td><%= company_contact.job_title %></td>
-        <td><%= company_contact.email %></td>
-        <td><%= company_contact.office_number %></td>
-        <td><%= company_contact.cellphone_number %></td>
+        <td><%= contact.contact_id %></td>
+        <td><%= contact.profile_pic_uri %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.job_title %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.office_number %></td>
+        <td><%= contact.cellphone_number %></td>
 
-        <td><%= link_to 'Edit', edit_contact_path(company_contact) %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
         <td>
-          <%= button_to "Delete", { action: "destroy", :controller => :contacts, id: company_contact.id },
+          <%= button_to "Delete", { action: "destroy", :controller => :contacts, id: contact.id },
           method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       </tr>

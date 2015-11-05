@@ -3,17 +3,24 @@ class ContactsController < ApplicationController
 
 
   def index
-    @company_contacts = Contact.all
 
-    if params[:search]
-      @company_contacts = Contact.search(params[:search]).order("created_at DESC")
+    if params[:company_id]
+      @company  = Company.find(params[:company_id])
+      @contacts = @company.contacts
     else
-      @company_contacts = Contact.order("created_at DESC")
+      @contacts = Contact.all
     end
+
+    # if params[:search]
+    #   @company_contacts = Contact.search(params[:search]).order("created_at DESC")
+    # else
+    #   @company_contacts = Contact.order("created_at DESC")
+    # end
   end
 
   def new
-    @company_contact = Contact.new
+    @company = Company.find(params[:company_id])
+    @contact = Contact.new
   end
 
   def edit
@@ -21,8 +28,10 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @company_contact = Contact.new(contact_params)
-    if @company_contact.save
+    @company = Company.find(params[:company_id])
+    @contact = @company.contacts.build(contact_params)
+
+    if @contact.save
       flash[:notice] = "The company has been created"
       redirect_to contacts_path
     else

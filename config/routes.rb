@@ -3,9 +3,6 @@ Rails.application.routes.draw do
 
   resources :admin
 
-  resources :companies do
-    collection { post :import }
-  end
   # get 'home', to: 'admin#index'
   resources :users
   get '/users', to: 'users#index'
@@ -14,7 +11,13 @@ Rails.application.routes.draw do
   get '/user/edit', to: 'users#edit'
   get '/user/delete', to: 'users#destroy'
 
-  resources :contacts
+
+  resources :contacts, only: [:index]
+  resources :companies, shallow: true do
+    collection { post :import }
+
+    resources :contacts
+  end
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'
