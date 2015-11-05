@@ -8,7 +8,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Company.destroy_all
-CompanyContact.destroy_all
+Contact.destroy_all
 User.destroy_all
 
 company_list = [
@@ -75,7 +75,7 @@ company_list = [
 
 contacts_list = [
     {
-    company_contact_id:"1",
+     contact_id:"1",
      # date_created:
      profile_pic_uri:"",
      name:"Giorgio Fanucchi",
@@ -88,7 +88,7 @@ contacts_list = [
     },
 
     {
-    company_contact_id:"2",
+     contact_id:"2",
      # date_created:
      profile_pic_uri:"",
      name:"Mateo Salazar",
@@ -101,7 +101,7 @@ contacts_list = [
     },
 
     {
-    company_contact_id:"3",
+     contact_id:"3",
      # date_created:
      profile_pic_uri:"",
      name:"Michael Lemus",
@@ -143,7 +143,7 @@ user_list = [
 
 
 Company.create company_list
-CompanyContact.create contacts_list
+Contact.create contacts_list
 User.create user_list
 
-Company.all.first.company_contacts << CompanyContact.all.first
+Company.all.first.contacts << Contact.all.first

@@ -1,23 +1,21 @@
 class Company < ActiveRecord::Base
-  require 'csv'
+  has_many :contacts, dependent: :destroy
 
+  require 'csv'
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-    Company.create! row.to_hash
-    end
-end
+      Company.create! row.to_hash
+      end
+  end
 
-# def self.to_csv(options = {})
-#   CSV.generate(options) do |csv|
-#     csv << column_names
-#     all.each do |company|
-#       csv << company.attributes.values_at(*column_name)
-#     end
-#   end
-# end
-
-  has_many :company_contacts, dependent: :destroy
-
+  # def self.to_csv(options = {})
+  #   CSV.generate(options) do |csv|
+  #     csv << column_names
+  #     all.each do |company|
+  #       csv << company.attributes.values_at(*column_name)
+  #     end
+  #   end
+  # end
 
   def self.search(query)
     where(

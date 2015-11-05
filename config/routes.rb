@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   get '/user/edit', to: 'users#edit'
   get '/user/delete', to: 'users#destroy'
 
-  resources :company_contacts
-  get '/contacts', to: 'company_contacts#index'
+  resources :contacts
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'

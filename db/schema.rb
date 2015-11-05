@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20151102232308) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "company_contacts", force: :cascade do |t|
-    t.string   "company_contact_id"
+  create_table "contacts", force: :cascade do |t|
+    t.string   "contact_id"
     t.datetime "date_created"
     t.string   "profile_pic_uri"
     t.string   "name"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151102232308) do
     t.string   "cellphone_number"
     t.string   "job_title"
     t.string   "company_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|

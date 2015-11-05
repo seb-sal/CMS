@@ -1,7 +1,7 @@
-class CreateCompanyContacts < ActiveRecord::Migration
+class CreateContacts < ActiveRecord::Migration
   def change
-    create_table :company_contacts do |t|
-      t.string :company_contact_id
+    create_table :contacts do |t|
+      t.string :contact_id
       t.timestamp :date_created
       t.string :profile_pic_uri
       t.string :name
