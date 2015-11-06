@@ -7,7 +7,12 @@
 * _"Create a basic Customer Management System for Small Business Owners to help them 'store' their customer information in a single place, and accessible nby anyone in the company"._
 
 ***
-#**Project Link:**    [Voila!](https://nameless-ocean-2280.herokuapp.com/login)
+#**Project Link:**    
+
+- [Web app](https://nameless-ocean-2280.herokuapp.com/login)
+
+
+- [Project Planner](https://trello.com/b/x5L3euOe/ga-projct-2)
 
 
 
