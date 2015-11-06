@@ -1,4 +1,5 @@
-<h2>Contacts page >> Create/Edit a contact</h2>
+
+<div class="form-group">
 
 <%= form_for @contact do |f| %>
   <% if @contact.errors.any? %>
@@ -12,39 +13,51 @@
     </div>
   <% end %>
 
+<table class="table table-hover table-striped">
+    <thread>
+           <tr><td class="info"><label>Create or Edit your contact</label>
+           </td></tr>
+          <tr><td class="form-group">
+            <%= f.label :Id %>
+            <%= f.text_field :contact_id %>
+          </td></tr>
 
-  <div class="field">
-    <%= f.label :Id %>
-    <%= f.text_field :contact_id %>
-  </div>
+          <tr><td class="form-group">
+            <%= f.label :Picture %>
+            <%= f.text_field :profile_pic_uri %>
+          </td></tr>
 
-  </div>
-    <div class="field">
-    <%= f.label :Picture %>
-    <%= f.text_field :profile_pic_uri %>
-  </div>
-  <div class="field">
-    <%= f.label :Name %>
-    <%= f.text_field :name %>
-  </div>
-    <div class="field">
-    <%= f.label :Title %>
-    <%= f.text_field :job_title %>
-  </div>
-    <div class="field">
-    <%= f.label :Email %>
-    <%= f.text_field :email %>
-  </div>
-    <div class="field">
-    <%= f.label :Office_number %>
-    <%= f.text_field :office_number %>
-  </div>
-    <div class="field">
-    <%= f.label :Cellphone %>
-    <%= f.text_field :cellphone_number %>
-  </div>
+          <tr><td class="form-group">
+            <%= f.label :Name %>
+            <%= f.text_field :name %>
+          </td></tr>
 
-  <div class="actions"><%= f.submit %>
+          <tr><td class="form-group">
+            <%= f.label :Title %>
+            <%= f.text_field :job_title %>
+          </td></tr>
+
+          <tr><td class="form-group">
+            <%= f.label :Email %>
+            <%= f.text_field :email %>
+          </td></tr>
+
+          <tr><td class="form-group">
+            <%= f.label :Office_number %>
+            <%= f.text_field :office_number %>
+          </td></tr>
+
+          <tr><td class="form-group">
+            <%= f.label :Cellphone %>
+            <%= f.text_field :cellphone_number %>
+           </tr></td>
+    </thread>
+  </table>
+
+  <div class="actions put-right"><%= f.submit %>
   </div>
 
 <% end %>
+
+</div>
+
