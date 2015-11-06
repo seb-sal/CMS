@@ -19,8 +19,10 @@
             <div class="nav navbar-nav" id="welcome">
                <% if current_user %>
                 <li>Welcome, <%= current_user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
-
             </div>
+                <a href="https://www.dropbox.com/s/p22vngs4vj7vaxa/readme.pdf?dl=0" class="navbar-btn btn-success btn pull-right">ReadMe</a>
+                <a href="https://github.com/sebasa1984/CMS" class="navbar-btn btn-danger btn pull-right">GitHub</a>
+                <a href="https://www.linkedin.com/in/sebsal" class="navbar-btn btn-primary btn pull-right">LinkedIn</a>
           <li><%= link_to 'Logout', session_path('dummy'), method: :delete %></li>
 
               <% else %>
@@ -36,6 +38,8 @@
 
             <li><%= link_to 'Users', controller: 'users' %></li>
             <!-- &nbsp;&nbsp;|&nbsp;&nbsp; -->
+
+
         </ul>
       </div>
     </div>
@@ -47,9 +51,10 @@
   </header>
 
   <div class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
+  <div class="container-footer">
       <p class="navbar-text pull-left">Copyright © 2015, All rights reserved - Sebastian Salazar</p>
-      <a href="https://www.linkedin.com/in/sebsal" class="navbar-btn btn-primary btn pull-right">Contact me on LinkedIn</a>
+
+
   </div>
 </div>
 
