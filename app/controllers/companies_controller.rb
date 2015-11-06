@@ -6,10 +6,12 @@ class CompaniesController < ApplicationController
     @companies = Company.all
 
     if params[:search]
-      @companies = Company.search(params[:search]).order(:created_at).reverse
+      @companies = Company.search(params[:search]).order(created_at: :desc)
     else
-      @companies = Company.order(:created_at).reverse
+      @companies = Company.order(created_at: :desc)
     end
+
+    @companies = @companies.paginate(:page => params[:page], :per_page => 5)
   end
 
 

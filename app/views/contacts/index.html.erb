@@ -1,14 +1,16 @@
-<h2>Contacts main page</h2>
 
-<h4>
+
+<div class="navbar-text pull-right">
   <%= form_tag(contacts_path, :method => "get", class: "navbar-form inline-form", id: "search-form") do %>
     <div class="input-append">
       <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Type Contact name" %>
       <button class="btn" type="submit"><i class="icon-search"></i>Search</button>
     </div>
   <% end %>
-  <%= button_to "Clear", contacts_path, method: :get, form_class: "inline-form" %>
-</h4>
+  <%= button_to "Clear", contacts_path, method: :get, form_class: "inline-form", class: "btn" %>
+</div>
+
+
 
 <table class="table table-striped table-hover">
   <thead>

@@ -17,6 +17,7 @@ class Company < ActiveRecord::Base
   #   end
   # end
 
+
   def self.search(query)
     where(
       "company_name LIKE ? OR company_type LIKE ? OR city LIKE ? OR country LIKE ? OR telephone LIKE ?",

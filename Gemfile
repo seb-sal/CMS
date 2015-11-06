@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'puma'
 
+gem 'will_paginate'
+
 gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass', '~> 3.2.0'
