@@ -12,6 +12,8 @@
 - [Web app](https://nameless-ocean-2280.herokuapp.com/login)
 
 
+- [Wireframes](https://www.dropbox.com/s/tt3834164r2wtkv/Ruby_Rails_webapp%20%281%29.pdf?dl=0)
+
 - [Project Planner](https://trello.com/b/x5L3euOe/ga-projct-2)
 
 
