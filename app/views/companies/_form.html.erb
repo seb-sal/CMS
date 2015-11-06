@@ -1,5 +1,5 @@
-<h2>Companies main page >> Create/Edit a new company</h2>
 
+<div class="company_form">
 <%= form_for @company do |f| %>
   <% if @company.errors.any? %>
     <div class="error_messages">
@@ -14,81 +14,94 @@
 
 
 
-  <div class="field" >
-    <%= f.label :Count %>
-    <%= f.text_field :count %>
-  </div>
+<table class="table table-hover table-striped">
+  <thread>
+          <tr><td class="info"><label>Create or Edit a company</label>
+           </td></tr>
 
-  <div class="field">
-    <%= f.label :Name %>
-    <%= f.text_field :company_name %>
-  </div>
+          <tr><td class="field" >
+            <%= f.label :Count %></br>
+            <%= f.text_field :count %>
+          </td></tr>
 
-    <div class="field">
-    <%= f.label :Size %>
-    <%= f.text_field :company_size %>
-  </div>
-  <div class="field">
-    <%= f.label :Type %>
-    <%= f.text_field :company_type %>
-  </div>
-    <div class="field">
-    <%= f.label :Logo %>
-    <%= f.text_field :logo_uri %>
-  </div>
-    <div class="field">
-    <%= f.label :Telephone %>
-    <%= f.text_field :telephone %>
-  </div>
-    <div class="field">
-    <%= f.label :Fax %>
-    <%= f.text_field :fax %>
-  </div>
-    <div class="field">
-    <%= f.label :Email %>
-    <%= f.text_field :email %>
-  </div>
+          <tr><td class="field">
+            <%= f.label :Name %></br>
+            <%= f.text_field :company_name %>
+          </td></tr>
 
+          <tr><td class="field">
+            <%= f.label :Size %></br>
+            <%= f.text_field :company_size %>
+          </td></tr>
 
+          <tr><td class="field">
+            <%= f.label :Type %></br>
+            <%= f.text_field :company_type %>
+          </td></tr>
 
-  <div class="field">
-    <%= f.label :Website %>
-    <%= f.text_field :website_uri %>
-  </div>
+          <tr><td class="field">
+            <%= f.label :Logo %></br>
+            <%= f.text_field :logo_uri %>
+          </td></tr>
 
-  <div class="field">
-    <%= f.label :Facebook %>
-    <%= f.text_field :facebook_uri %>
-  </div>
+          <tr><td class="field">
+            <%= f.label :Telephone %></br>
+            <%= f.text_field :telephone %>
+          </td></tr>
 
-  <div class="field">
-    <%= f.label :LinkedIn %>
-    <%= f.text_field :linkedin_uri %>
-  </div>
+          <tr><td class="field">
+            <%= f.label :Fax %></br>
+            <%= f.text_field :fax %>
+          </td></tr>
 
-  <div class="field">
-    <%= f.label :Address %>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :City %>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :State %>
-    <%= f.text_field :state %>
-  </div>
+          <tr><td class="field">
+            <%= f.label :Email %></br>
+            <%= f.text_field :email %>
+          </td></tr>
 
-  <div class="field">
-    <%= f.label :Zip %>
-    <%= f.text_field :zip_code %>
-  </div>
-  <div class="field">
-    <%= f.label :Country %>
-    <%= f.text_field :country %>
-  </div>
+          <tr><td class="field">
+            <%= f.label :Website %></br>
+            <%= f.text_field :website_uri %>
+          </td></tr>
 
-  <div class="actions"><%= f.submit %>
-  </div>
+          <tr><td class="field">
+            <%= f.label :Facebook %></br>
+            <%= f.text_field :facebook_uri %>
+          </td></tr>
 
-<% end %>
+          <tr><td class="field">
+            <%= f.label :LinkedIn %></br>
+            <%= f.text_field :linkedin_uri %>
+          </td></tr>
+
+          <tr><td class="field">
+            <%= f.label :Address %></br>
+            <%= f.text_field :address %>
+          </td></tr>
+
+          <tr><td class="field">
+            <%= f.label :City %></br>
+            <%= f.text_field :city %>
+          </td></tr>
+
+          <tr><td class="field">
+            <%= f.label :State %></br>
+            <%= f.text_field :state %>
+          </td></tr>
+
+          <tr><td class="field">
+            <%= f.label :Zip %></br>
+            <%= f.text_field :zip_code %>
+          </td></tr>
+
+          <tr><td class="field">
+            <%= f.label :Country %></br>
+            <%= f.text_field :country %>
+          </td></tr>
+
+          <tr><td class="actions"><%= f.submit %>
+          </td></tr>
+          <% end %>
+    </thread>
+</table>
+<div class="form-group">

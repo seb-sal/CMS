@@ -1,91 +1,102 @@
-<h2>Companies main page >> Company view page</h2>
 
 
-<h4><%= link_to "Add a contact", new_company_contact_path(@company) %></h4>
 
+<div class="company_edit">
 
-<p>
-  <strong>Company id:</strong>
-  <%= @company.count %>
-</p>
+<table class="table table-hover table-striped table-condensed">
+  <thread>
+          <tr><td class="info"><label>Company details page</label>
+           </td></tr>
 
-<p>
-  <strong>Logo:</strong>
-  <%= @company.logo_uri %>
-</p>
+            <tr><td>
+              <strong><%= link_to "Add a contact", new_company_contact_path(@company) %></strong>
+           </td></tr>
 
-<p>
-  <strong>Company Name:</strong>
-  <%= @company.company_name %>
-</p>
+           <tr><td>
+            <strong>Company id:</strong>
+            <%= @company.count %>
+          </td></tr>
 
-<p>
-  <strong>Company Size:</strong>
-  <%= @company.company_size %>
-</p>
+          <tr><td>
+            <strong>Logo:</strong>
+            <%= @company.logo_uri %>
+          </td></tr>
 
-<p>
-  <strong>Company Type:</strong>
-  <%= @company.company_type %>
-</p>
+          <tr><td>
+            <strong>Company Name:</strong>
+            <%= @company.company_name %>
+          </td></tr>
 
-<p>
-  <strong>Telephone:</strong>
-  <%= @company.telephone %>
-</p>
+          <tr><td>
+            <strong>Company Size:</strong>
+            <%= @company.company_size %>
+          </td></tr>
 
-<p>
-  <strong>Fax:</strong>
-  <%= @company.fax %>
-</p>
+          <tr><td>
+            <strong>Company Type:</strong>
+            <%= @company.company_type %>
+          </td></tr>
 
-<p>
-  <strong>Email:</strong>
-  <%= @company.email %>
-</p>
+          <tr><td>
+            <strong>Telephone:</strong>
+            <%= @company.telephone %>
+          </td></tr>
 
-<p>
-  <strong>Address:</strong>
-  <%= @company.address %>
-</p>
+          <tr><td>
+            <strong>Fax:</strong>
+            <%= @company.fax %>
+          </td></tr>
 
-<p>
-  <strong>City:</strong>
-  <%= @company.city %>
-</p>
+          <tr><td>
+            <strong>Email:</strong>
+            <%= @company.email %>
+          </td></tr>
 
-<p>
-  <strong>State:</strong>
-  <%= @company.state %>
-</p>
+          <tr><td>
+            <strong>Address:</strong>
+            <%= @company.address %>
+          </td></tr>
 
-<p>
-  <strong>Zip Code:</strong>
-  <%= @company.zip_code %>
-</p>
+          <tr><td>
+            <strong>City:</strong>
+            <%= @company.city %>
+          </td></tr>
 
-<p>
-  <strong>Country:</strong>
-  <%= @company.country %>
-</p>
+          <tr><td>
+            <strong>State:</strong>
+            <%= @company.state %>
+          </td></tr>
 
-<p>
-  <strong>Website:</strong>
-  <%= @company.website_uri %>
-</p>
+          <tr><td>
+            <strong>Zip Code:</strong>
+            <%= @company.zip_code %>
+          </td></tr>
 
-<p>
-  <strong>Facebook page:</strong>
-  <%= @company.facebook_uri %>
-</p>
+          <tr><td>
+            <strong>Country:</strong>
+            <%= @company.country %>
+          </td></tr>
 
+          <tr><td>
+            <strong>Website:</strong>
+            <%= @company.website_uri %>
+          </td></tr>
 
-<p>
-  <strong>LinkedIn page:</strong>
-  <%= @company.linkedin_uri %>
-</p>
+          <tr><td>
+            <strong>Facebook page:</strong>
+            <%= @company.facebook_uri %>
+          </td></tr>
 
+          <tr><td>
+            <strong>LinkedIn page:</strong>
+            <%= @company.linkedin_uri %>
+          </td></tr>
+            <tr><td>
+                <%= link_to 'Edit', edit_company_path(@company) %> |
+                <%= link_to 'Back', companies_path %>
+            </td></tr>
+    </thread>
+</table>
+</div>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
 
