@@ -1,14 +1,25 @@
-<h2>Login</h2>
+<div class="jumbotron">
+
+<h1 id="login">Login</h1>
 
 <p id="alert"><%= alert %></p>
 <%= form_tag sessions_path do %>
-  <div class="field">
+  <div class="username">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
   </div>
-  <div class="field">
-    <%= label_tag :password %>
+  <div class="password">
+    <%= label_tag :Pass %>
     <%= password_field_tag :password %>
   </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+  <div class="action-btn"><%= submit_tag "Log in" %></div>
 <% end %>
+</div>
+
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+      <p class="navbar-text pull-left">Copyright © 2015, All rights reserved - Sebastian Salazar</p>
+      <a href="https://www.linkedin.com/in/sebsal" class="navbar-btn btn-primary btn pull-right">Contact me on LinkedIn</a>
+  </div>
+</div>

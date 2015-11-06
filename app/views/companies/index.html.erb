@@ -2,8 +2,8 @@
 
 <h2><%= link_to 'New Company', new_company_path %></h2>
 
-<h3>
 
+<h3>
   <%= form_tag(companies_path, :method => "get", class: "navbar-form inline-form", id: "search-form") do %>
     <div class="input-append">
       <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Type company name" %>
@@ -14,9 +14,10 @@
 </h3>
 
 
-<table>
+
+<table class="table table-striped table-hover table-condensed table-responsive">
   <thead>
-    <tr>
+    <tr class="info">
       <th>Id</th>
       <th>Company Name</th>
       <th>Company Size</th>
@@ -69,6 +70,25 @@
     <%= submit_tag "Import CSV" %>
   <% end %>
 </p>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 <!--
   <h5>Download:</h5>
